@@ -59,6 +59,8 @@ namespace GestionRSA
         /// 
         /// </summary>
         XmlDocument _xmlDoc;
+
+        ConnectionClass.ConnectionClass CClassDB;
         #endregion
 
         #region Constructores
@@ -131,6 +133,16 @@ namespace GestionRSA
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void GuardarPublicKeyEnDB()
+        {
+            CClassDB = new ConnectionClass.ConnectionClass();
+            _xmlDoc = new XmlDocument();
+            _xmlDoc.PreserveWhitespace = true;
+            _xmlDoc.Load(_PathArchivos + "PublicKey" + _XMLExtension);
+
+            CClassDB.Executa("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
         }
         #endregion
     }

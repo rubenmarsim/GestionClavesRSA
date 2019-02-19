@@ -33,5 +33,10 @@ namespace FormRSA
         {
             _CGestionRSA.ReadRSAKeys();
         }
+
+        private void btnSaveToDB_Click(object sender, EventArgs e)
+        {
+            _CGestionRSA.GuardarPublicKeyEnDB();
+        }
     }
 }

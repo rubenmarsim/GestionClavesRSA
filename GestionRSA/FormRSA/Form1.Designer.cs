@@ -30,6 +30,7 @@
         {
             this.btnCreateRSA = new System.Windows.Forms.Button();
             this.btnReadRSA = new System.Windows.Forms.Button();
+            this.btnSaveToDB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateRSA
@@ -52,11 +53,22 @@
             this.btnReadRSA.UseVisualStyleBackColor = true;
             this.btnReadRSA.Click += new System.EventHandler(this.btnReadRSA_Click);
             // 
+            // btnSaveToDB
+            // 
+            this.btnSaveToDB.Location = new System.Drawing.Point(275, 270);
+            this.btnSaveToDB.Name = "btnSaveToDB";
+            this.btnSaveToDB.Size = new System.Drawing.Size(193, 91);
+            this.btnSaveToDB.TabIndex = 2;
+            this.btnSaveToDB.Text = "Save To DB";
+            this.btnSaveToDB.UseVisualStyleBackColor = true;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
+            // 
             // frmRSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaveToDB);
             this.Controls.Add(this.btnReadRSA);
             this.Controls.Add(this.btnCreateRSA);
             this.Name = "frmRSA";
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Button btnCreateRSA;
         private System.Windows.Forms.Button btnReadRSA;
+        private System.Windows.Forms.Button btnSaveToDB;
     }
 }
 

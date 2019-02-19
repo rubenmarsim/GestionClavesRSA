@@ -46,5 +46,11 @@
     <Compile Include="GestionRSA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionClass\ConnectionClass.csproj">
+      <Project>{4a0d0623-3d0a-4ba3-b1fd-c73e57cb8d53}</Project>
+      <Name>ConnectionClass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
