@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionClass", "ConnectionClass\ConnectionClass.csproj", "{4A0D0623-3D0A-4BA3-B1FD-C73E57CB8D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormRSA", "FormRSA\FormRSA.csproj", "{C26A14BA-05CB-445A-BEDA-0E834992FFF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionRSA", "GestionRSA\GestionRSA.csproj", "{43610CF0-7035-4A4D-A7C3-20E2CF8358F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A0D0623-3D0A-4BA3-B1FD-C73E57CB8D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0D0623-3D0A-4BA3-B1FD-C73E57CB8D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0D0623-3D0A-4BA3-B1FD-C73E57CB8D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0D0623-3D0A-4BA3-B1FD-C73E57CB8D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26A14BA-05CB-445A-BEDA-0E834992FFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26A14BA-05CB-445A-BEDA-0E834992FFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26A14BA-05CB-445A-BEDA-0E834992FFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26A14BA-05CB-445A-BEDA-0E834992FFF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43610CF0-7035-4A4D-A7C3-20E2CF8358F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43610CF0-7035-4A4D-A7C3-20E2CF8358F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43610CF0-7035-4A4D-A7C3-20E2CF8358F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43610CF0-7035-4A4D-A7C3-20E2CF8358F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C19C205B-8D5D-4447-A7E6-903132BF0BFA}
+	EndGlobalSection
+EndGlobal
