@@ -55,10 +55,6 @@ namespace GestionRSA
         /// Variable donde vamos a guardar la clave RSA publica que vamos a leer del XML
         /// </summary>
         string _XMLPublicKey = string.Empty;
-        /// <summary>
-        /// 
-        /// </summary>
-        XmlDocument _xmlDoc;
 
         ConnectionClass.ConnectionClass CClassDB;
         #endregion
@@ -138,9 +134,6 @@ namespace GestionRSA
         public void GuardarPublicKeyEnDB()
         {
             CClassDB = new ConnectionClass.ConnectionClass();
-            _xmlDoc = new XmlDocument();
-            _xmlDoc.PreserveWhitespace = true;
-            _xmlDoc.Load(_PathArchivos + "PublicKey" + _XMLExtension);
 
             CClassDB.Executa("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
         }
