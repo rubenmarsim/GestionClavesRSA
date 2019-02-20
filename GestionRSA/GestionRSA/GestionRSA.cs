@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace GestionRSA
         /// <summary>
         /// Constante con la ruta donde vamos a tener nuestros archivos encriptados
         /// </summary>
-        const string _PathArchivos = "Archivos/";
+        string _PathArchivos = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/";
         /// <summary>
         /// Constante para el uso de la extension de XML
         /// </summary>
@@ -136,6 +137,18 @@ namespace GestionRSA
             CClassDB = new ConnectionClass.ConnectionClass();
 
             CClassDB.Executa("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
+        }
+        public byte[] EncriptarRSA(string txt, string xmlPublic)
+        {
+            _RSA.FromXmlString(xmlPublic);
+            byte[] encrypt = _RSA.Encrypt(Encoding.ASCII.GetBytes(txt), false);
+            return encrypt;
+        }
+        public byte[] DesencriptarRSA(string txt, string xmlPrivada)
+        {
+            _RSA.FromXmlString(xmlPrivada);
+            byte[] dencrypt = _RSA.Decrypt(Convert.FromBase64String(txt), false);
+            return dencrypt;
         }
         #endregion
     }
