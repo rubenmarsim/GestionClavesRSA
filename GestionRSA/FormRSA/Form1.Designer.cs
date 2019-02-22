@@ -49,7 +49,7 @@
             this.btnReadRSA.Name = "btnReadRSA";
             this.btnReadRSA.Size = new System.Drawing.Size(193, 78);
             this.btnReadRSA.TabIndex = 1;
-            this.btnReadRSA.Text = "Read RSA Keys";
+            this.btnReadRSA.Text = "Read RSA Keys from DB";
             this.btnReadRSA.UseVisualStyleBackColor = true;
             this.btnReadRSA.Click += new System.EventHandler(this.btnReadRSA_Click);
             // 

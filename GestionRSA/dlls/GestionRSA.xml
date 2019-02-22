@@ -35,6 +35,11 @@
             Constante con la ruta donde vamos a tener nuestros archivos encriptados
             </summary>
         </member>
+        <member name="F:GestionRSA.GestionRSA._PathAssembly">
+            <summary>
+            Path donde se guarda la dll del programa
+            </summary>
+        </member>
         <member name="F:GestionRSA.GestionRSA._XMLExtension">
             <summary>
             Constante para el uso de la extension de XML
@@ -56,9 +61,9 @@
             Variable donde vamos a guardar la clave RSA publica que vamos a leer del XML
             </summary>
         </member>
-        <member name="F:GestionRSA.GestionRSA._xmlDoc">
+        <member name="F:GestionRSA.GestionRSA._PublicKeyDB">
             <summary>
-            
+            Variable donde guardamos la clave RSA publica que cogemos de la DB
             </summary>
         </member>
         <member name="M:GestionRSA.GestionRSA.#ctor">
@@ -76,6 +81,16 @@
         <member name="M:GestionRSA.GestionRSA.ReadRSAKeys">
             <summary>
             Leemos la clave publica desde un fichero XML
+            </summary>
+        </member>
+        <member name="M:GestionRSA.GestionRSA.ReadRSAKeysFromDB">
+            <summary>
+            Leemos el string que contien la clave publica que hemos guardado en la Base de datos
+            </summary>
+        </member>
+        <member name="M:GestionRSA.GestionRSA.GuardarPublicKeyEnDB">
+            <summary>
+            Guardamos el string de la clave publica en la base de datos
             </summary>
         </member>
     </members>

@@ -40,6 +40,10 @@ namespace GestionRSA
         /// </summary>
         string _PathArchivos = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Archivos/";
         /// <summary>
+        /// Path donde se guarda la dll del programa
+        /// </summary>
+        string _PathAssembly = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        /// <summary>
         /// Constante para el uso de la extension de XML
         /// </summary>
         const string _XMLExtension = ".xml";
@@ -56,6 +60,10 @@ namespace GestionRSA
         /// Variable donde vamos a guardar la clave RSA publica que vamos a leer del XML
         /// </summary>
         string _XMLPublicKey = string.Empty;
+        /// <summary>
+        /// Variable donde guardamos la clave RSA publica que cogemos de la DB
+        /// </summary>
+        string _PublicKeyDB = string.Empty;
 
         ConnectionClass.ConnectionClass CClassDB;
         #endregion
@@ -118,7 +126,7 @@ namespace GestionRSA
         /// <summary>
         /// Leemos la clave publica desde un fichero XML
         /// </summary>
-        public void ReadRSAKeys()
+        private void ReadRSAKeys()
         {
             try
             {
@@ -131,12 +139,26 @@ namespace GestionRSA
                 MessageBox.Show(ex.Message);
             }
         }
-
-        public void GuardarPublicKeyEnDB()
+        /// <summary>
+        /// Leemos el string que contien la clave publica que hemos guardado en la Base de datos
+        /// </summary>
+        public void ReadRSAKeysFromDB()
         {
             CClassDB = new ConnectionClass.ConnectionClass();
 
-            CClassDB.Executa("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _PathArchivos + "PublicKey" + _XMLExtension + "');");
+            var dts = CClassDB.PortaPerConsulta("SELECT XMLKey FROM PlanetKeys");
+            var UltimaFila = dts.Tables[0].Rows.Count - 1;
+            _PublicKeyDB = dts.Tables[0].Rows[UltimaFila].ItemArray[0].ToString();
+        }
+        /// <summary>
+        /// Guardamos el string de la clave publica en la base de datos
+        /// </summary>
+        public void GuardarPublicKeyEnDB()
+        {
+            ReadRSAKeys();
+            CClassDB = new ConnectionClass.ConnectionClass();
+
+            CClassDB.Executa("insert into PlanetKeys (Planet, XMLKey) values ('PbcK', '" + _XMLPublicKey + "');");
         }
         public byte[] EncriptarRSA(string txt, string xmlPublic)
         {

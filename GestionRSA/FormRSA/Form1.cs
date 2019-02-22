@@ -31,7 +31,8 @@ namespace FormRSA
 
         private void btnReadRSA_Click(object sender, EventArgs e)
         {
-            _CGestionRSA.ReadRSAKeys();
+            //_CGestionRSA.ReadRSAKeys();
+            _CGestionRSA.ReadRSAKeysFromDB();
         }
 
         private void btnSaveToDB_Click(object sender, EventArgs e)
